@@ -16,7 +16,6 @@ const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
 const allowedOrigins = [
-  "http://localhost:5173",
   "https://zenith-lms-learn.vercel.app"
 ];
 
