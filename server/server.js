@@ -15,18 +15,22 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
+const cors = require("cors");
+
 const allowedOrigins = [
-  "https://zenith-lms-learn.vercel.app"
+  "https://zenith-lms-learn.vercel.app",
 ];
 
 app.use(
   cors({
     origin: function (origin, callback) {
-      if (!origin) return callback(null, true); // allow requests with no origin (like Postman)
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else if (origin.endsWith(".vercel.app")) {
+        // allow preview deployments like https://yourbranch-yourrepo.vercel.app
+        callback(null, true);
       } else {
-        return callback(new Error("CORS policy: Not allowed by CORS"));
+        callback(new Error("CORS policy: Not allowed"));
       }
     },
     credentials: true,
