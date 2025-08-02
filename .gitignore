@@ -6,6 +6,8 @@ dist/
 build/
 *.log
 npm-debug.log*
+server/uploads/
+
 
 # Logs
 logs
