@@ -1,0 +1,49 @@
+# Root level
+node_modules/
+.env
+.DS_Store
+dist/
+build/
+*.log
+npm-debug.log*
+
+# Logs
+logs
+*.log
+yarn-debug.log*
+yarn-error.log*
+
+# Optional OS/System files
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Optional IDE/editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# React build (if built in root accidentally)
+*.cache
+*.parcel-cache
+
+# React frontend
+client/node_modules/
+client/.env
+client/build/
+client/.next/
+client/.turbo/
+
+# Server backend
+server/node_modules/
+server/.env
+
+# Test coverage
+coverage/
+
+# Optional: ignore static assets cache
+client/.eslintcache
