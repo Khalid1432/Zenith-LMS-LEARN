@@ -19,6 +19,7 @@ const MONGO_URI = process.env.MONGO_URI;
 // ✅ CORS Setup
 const allowedOrigins = [
   "https://zenith-lms-learn.vercel.app",
+  "http://localhost:5173"
 ];
 
 app.use(
